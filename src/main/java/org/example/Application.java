@@ -15,7 +15,7 @@ public class Application {
     }
     public void start() throws SQLException {
         while (!exit) {
-            switch (helper.mainMenu2()) {
+            switch (helper.mainMenu()) {
                 case 1 -> {
                     dbHandler.create();
                     break;
