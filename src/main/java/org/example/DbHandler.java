@@ -10,9 +10,7 @@ public class DbHandler implements iCrud, iTable {
     private ResultSet rs;
     private Helper helper;
     private Scanner sc;
-    private ToDo todo;
 
-    //private List<ToDo> todos;
     public DbHandler(String dbName) throws SQLException {
         getConnection(dbName);
         helper = new Helper();
@@ -35,8 +33,9 @@ public class DbHandler implements iCrud, iTable {
     }
 
     @Override
-    public void create() {
+    public boolean create() {
         String tableName = helper.askForTableName();
+        boolean success = false;
 
         if (searchForTable(tableName) == true) {
             ToDo todo = helper.askForTodo();
@@ -48,19 +47,24 @@ public class DbHandler implements iCrud, iTable {
                 pstmt.setString(3, todo.getDone());
                 pstmt.executeUpdate();
                 System.out.println("Todo added to table " + tableName);
+                success = true;
             } catch (SQLException e) {
                 System.out.println("Error creating todo: " + e.getMessage());
+                success = false;
             }
         }
         if (searchForTable(tableName) == false) {
             createTable(tableName); //skapa en ny tabell
             create();
+            success = true;
         }
+        return success;
     }
 
     @Override
-    public void read() {
+    public boolean read() {
         String tableName = helper.askForTableName();
+        boolean success = false;
         String sql = "SELECT * FROM " + tableName;
         try {
             Statement stmt = connection.createStatement();
@@ -72,65 +76,28 @@ public class DbHandler implements iCrud, iTable {
                 System.out.println("Assignment: " + assignment + ". Assignee: " + assignee + ". Done: " + done);
             }
             System.out.println("--------------------------");
+            success = true;
         } catch (SQLException e) {
             System.out.println("Error reading table: " + e.getMessage());
+            success = false;
+        }
+        return success;
+    }
+    public void update() {
+        int answer = helper.askForUpdate();
+        switch(answer) {
+            case 1 -> updateText();
+            case 2 -> updateDone();
+            default -> {
+                System.out.println("Wrong input. Try again");
+                update();
+            }
         }
     }
-    /*public void updateText() throws SQLException {
-        String tableName = helper.askForTableName();
-        String sql = "SELECT * FROM " + tableName;
 
-        try {
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            int counter = 1;
-            while (rs.next()) {
-                String assignment = rs.getString("assignment");
-                String assignee = rs.getString("assignee");
-                String done = rs.getString("done");
-                System.out.println(counter + ". Assignment: " + assignment + ". Assignee: " + assignee + ". Done: " + done);
-                counter++;
-            }
-
-            int choice = helper.askForId();
-            rs.absolute(choice);
-            String chosenAssignment = rs.getString("assignment");
-            String chosenAssignee = rs.getString("assignee");
-            String chosenDone = rs.getString("done");
-            String newAssignment = helper.askForOnlyAssignment();
-            String sqlUpdate = "UPDATE " + tableName + " SET assignment = ? WHERE assignment = ?, assignee = ?";
-
-            try (PreparedStatement pstmt = connection.prepareStatement(sqlUpdate)) {
-                pstmt.setString(1, newAssignment); //parametern i String sql
-                pstmt.setString(2, chosenAssignment); //parametern i String sql
-                pstmt.setString(3, chosenAssignee);
-                pstmt.executeUpdate();
-                System.out.println("Table updated successfully");
-            } catch (SQLException e) {
-                System.out.println();
-            }
-        } catch (SQLException e) {
-            System.out.println();
-        }
-    }
-    public boolean updateDone() {
+    public boolean updateText() {
         String tableName = helper.askForTableName();
-        String newDone = helper.askForDone();
-        int id = helper.askForId();
-        String sql = "UPDATE " + tableName + " SET done = ? WHERE todo_id = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
-            pstmt.setString(1, newDone);
-            pstmt.setInt(2, id);
-            pstmt.executeUpdate();
-            System.out.println("Table updated successfully");
-            return true;
-        } catch (SQLException e) {
-            System.out.println("Error updating table: " + e.getMessage());
-            return false;
-        }
-    }*/
-    public void updateText() {
-        String tableName = helper.askForTableName();
+        boolean success = false;
         try {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM " + tableName;
@@ -156,12 +123,17 @@ public class DbHandler implements iCrud, iTable {
             pstmt.setString(1, newAssignment);
             pstmt.setInt(2, chosenId);
             pstmt.executeUpdate();
+            success = true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error updating ToDo: " + e.getMessage());
+            success = false;
         }
+        return success;
     }
-    public void updateDone() {
+
+    public boolean updateDone() {
         String tableName = helper.askForTableName();
+        boolean success = false;
         try {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM " + tableName;
@@ -187,67 +159,18 @@ public class DbHandler implements iCrud, iTable {
             pstmt.setString(1, newDone);
             pstmt.setInt(2, chosenId);
             pstmt.executeUpdate();
+            success = true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error updating ToDo: " + e.getMessage());
+            success = false;
         }
+        return success;
     }
 
-    /*@Override
-    public void update() {
-        String tableName = helper.askForTableName();
-        String sql = "SELECT * FROM " + tableName;
-
-        try {
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            int counter = 1;
-            while (rs.next()) {
-                String assignment = rs.getString("assignment");
-                String assignee = rs.getString("assignee");
-                String done = rs.getString("done");
-                System.out.println(counter + ". Assignment: " + assignment + ". Assignee: " + assignee + ". Done: " + done);
-                counter++;
-                //result = true;
-            }
-        } catch (SQLException e) {
-            System.out.println();
-        }
-
-        int choice = helper.askForId();
-        String answer = helper.askForUpdate();
-
-        try {
-            rs.absolute(choice);
-            String chosenAssignment = rs.getString("assignment");
-            String chosenAssignee = rs.getString("assignee");
-            String chosenDone = rs.getString("done");
-
-            if (answer.equalsIgnoreCase("assignment")) {
-                String newAssignment = helper.askForOnlyAssignment();
-                chosenAssignment = newAssignment;
-            } else if (answer.equalsIgnoreCase("done")) {
-                String newDone = helper.askForDone();
-                chosenDone = newDone;
-            } else {
-                System.out.println("Invalid input");
-                return;
-            }
-            String sqlUpdate = "UPDATE " + tableName + " SET assignment = ?, done = ? WHERE assignment = ? AND assignee = ?";
-            PreparedStatement pstmt = connection.prepareStatement(sqlUpdate);
-            pstmt.setString(1, chosenAssignment);
-            pstmt.setString(2, chosenDone);
-            pstmt.setString(3, chosenAssignment);
-            pstmt.setString(3, chosenAssignee);
-            pstmt.executeUpdate();
-            System.out.println("Todo updated successfully");
-        } catch (SQLException e) {
-            System.out.println("Error updating todo");
-        }
-    }*/
-
     @Override
-    public void delete() {
+    public boolean delete() {
         String tableName = helper.askForTableName();
+        boolean success = false;
         try {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM " + tableName;
@@ -265,17 +188,19 @@ public class DbHandler implements iCrud, iTable {
                 System.out.println("Done: " + done);
                 System.out.println("-------------------------");
             }
-            System.out.println("Enter Id and press enter");
-            int chosenId = sc.nextInt();
-            sc.nextLine();
+
+            int chosenId = helper.askForId();
             String sql = "DELETE FROM " + tableName + " WHERE todo_id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setInt(1, chosenId);
             pstmt.executeUpdate();
             System.out.println("ToDo deleted successfully");
+            success = true;
         } catch (SQLException e) {
             System.out.println("Error deleting todo: " + e.getMessage());
+            success = false;
         }
+        return success;
     }
 
     public void createTable(String tableName) {

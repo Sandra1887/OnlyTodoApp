@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="Working application - clean coded a bit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/HelperTest.java" afterDir="false" />
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="HelperTests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/iCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/iCrud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +90,19 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1687599272152</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="HelperTests">
+      <created>1687607067952</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1687607067952</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working application" />
     <MESSAGE value="Working application - clean coded a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working application - clean coded a bit" />
+    <MESSAGE value="HelperTests" />
+    <option name="LAST_COMMIT_MESSAGE" value="HelperTests" />
   </component>
 </project>

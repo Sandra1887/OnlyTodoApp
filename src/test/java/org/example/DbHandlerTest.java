@@ -7,8 +7,8 @@ import org.mockito.Mockito;
 import java.sql.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
 
 class DbHandlerTest {
     Connection connectionMock;
@@ -59,5 +59,88 @@ class DbHandlerTest {
 
         assertFalse(result);
     }
+    @Test
+    public void testRead() throws SQLException {
+        when(helperMock.askForTableName()).thenReturn("tableMock");
+        when(connectionMock.createStatement()).thenReturn(stmtMock);
+        when(stmtMock.executeQuery(anyString())).thenReturn(rsMock);
+        when(rsMock.next()).thenReturn(true, false);
+        when(rsMock.getString("assignment")).thenReturn("assignmentMock");
+        when(rsMock.getString("assignee")).thenReturn("assigneeMock");
+        when(rsMock.getString("done")).thenReturn("doneMock");
 
+        boolean result = dbHandlerMock.read();
+
+        /*Mockito.verify(helperMock).askForTableName();
+
+        Mockito.verify(connectionMock).createStatement();
+        Mockito.verify(stmtMock).executeQuery("SELECT * FROM tablemock");
+
+        Mockito.verify(rsMock).next();
+        Mockito.verify(rsMock).getString("assignment");
+        Mockito.verify(rsMock).getString("assignee");
+        Mockito.verify(rsMock).getString("done");*/
+
+        assertFalse(result);
+    }
+
+    @Test
+    public void testUpdateText() throws SQLException {
+        when(helperMock.askForTableName()).thenReturn("tableMock");
+        when(helperMock.askForId()).thenReturn(1);
+        when(helperMock.askForOnlyAssignment()).thenReturn("newAssignmentMock");
+
+        when(connectionMock.createStatement()).thenReturn(stmtMock);
+        when(stmtMock.executeQuery(anyString())).thenReturn(rsMock);
+        when(rsMock.next()).thenReturn(true, false);
+        when(rsMock.getInt("todo_id")).thenReturn(1);
+        when(rsMock.getString("assignment")).thenReturn("oldAssignmentMock");
+        when(rsMock.getString("assignee")).thenReturn("assigneeMock");
+        when(rsMock.getString("done")).thenReturn("doneMock");
+        when(connectionMock.prepareStatement(anyString())).thenReturn(pstmtMock);
+        when(pstmtMock.executeUpdate()).thenReturn(1);
+
+        boolean result = dbHandlerMock.updateText();
+
+        assertFalse(result);
+    }
+    @Test
+    public void testUpdateDone() throws SQLException {
+        when(helperMock.askForTableName()).thenReturn("tableMock");
+        when(helperMock.askForId()).thenReturn(1);
+        when(helperMock.askForDone()).thenReturn("newDoneMock");
+
+        when(connectionMock.createStatement()).thenReturn(stmtMock);
+        when(stmtMock.executeQuery(anyString())).thenReturn(rsMock);
+        when(rsMock.next()).thenReturn(true, false);
+        when(rsMock.getInt("todo_id")).thenReturn(1);
+        when(rsMock.getString("assignment")).thenReturn("AssignmentMock");
+        when(rsMock.getString("assignee")).thenReturn("assigneeMock");
+        when(rsMock.getString("done")).thenReturn("oldDoneMock");
+        when(connectionMock.prepareStatement(anyString())).thenReturn(pstmtMock);
+        when(pstmtMock.executeUpdate()).thenReturn(1);
+
+        boolean result = dbHandlerMock.updateText();
+
+        assertFalse(result);
+    }
+    @Test
+    public void testDelete() throws SQLException {
+        when(helperMock.askForTableName()).thenReturn("tableMock");
+        when(helperMock.askForId()).thenReturn(1);
+
+        when(connectionMock.createStatement()).thenReturn(stmtMock);
+        when(stmtMock.executeQuery(anyString())).thenReturn(rsMock);
+        when(rsMock.getInt("todo_id")).thenReturn(1);
+        when(rsMock.getString("assignment")).thenReturn("mockAssignment");
+        when(rsMock.getString("assignee")).thenReturn("mockAssignee");
+        when(rsMock.getString("done")).thenReturn("mockDone");
+
+        when(connectionMock.prepareStatement(anyString())).thenReturn(pstmtMock);
+        when(pstmtMock.executeUpdate()).thenReturn(1);
+
+        boolean result = dbHandlerMock.delete();
+
+        assertFalse(result);
+    }
 }

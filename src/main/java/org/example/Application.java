@@ -15,7 +15,7 @@ public class Application {
     }
     public void start() throws SQLException {
         while (!exit) {
-            switch (helper.mainMenu()) {
+            switch (helper.mainMenu2()) {
                 case 1 -> {
                     dbHandler.create();
                     break;
@@ -25,16 +25,16 @@ public class Application {
                     break;
                 }
                 case 3 -> {
-                    dbHandler.updateText();
+                    dbHandler.update();
                     break;
                 }
-                case 4 -> {
+                /*case 4 -> {
                     dbHandler.updateDone();
-                }
-                case 5 -> {
+                }*/
+                case 4 -> {
                     dbHandler.delete();
                 }
-                case 6 -> {
+                case 5 -> {
                     exit = true;
                 }
             }
