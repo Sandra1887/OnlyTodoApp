@@ -39,7 +39,7 @@ public class DbHandler implements iCrud, iTable {
         String tableName = helper.askForTableName();
 
         if (searchForTable(tableName) == true) {
-            ToDo todo = helper.askForAssignment();
+            ToDo todo = helper.askForTodo();
             String sql = "INSERT INTO " + tableName + " (assignment, assignee, done) VALUES (?,?,?)"; // plus för att du har paramtrar!
 
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
@@ -50,14 +50,12 @@ public class DbHandler implements iCrud, iTable {
                 System.out.println("Todo added to table " + tableName);
             } catch (SQLException e) {
                 System.out.println("Error creating todo: " + e.getMessage());
-                //return false; //assignment not added
             }
         }
         if (searchForTable(tableName) == false) {
             createTable(tableName); //skapa en ny tabell
             create();
         }
-        //return true;
     }
 
     @Override

@@ -32,7 +32,7 @@ public class Helper {
         return sc.nextLine();
     }
 
-    public boolean askForAssignmentOrDone() {
+    /*public boolean askForAssignmentOrDone() {
         System.out.println("Update assignment or done? Make a choice and press enter");
         String choice = sc.nextLine();
         if(choice.equalsIgnoreCase("assignment")) {
@@ -40,26 +40,26 @@ public class Helper {
         } else {
             return false;
         }
-    }
+    }*/
 
     public String askForOnlyAssignment() {
         System.out.println("Enter assignment and press enter");
         return sc.nextLine();
     }
-    public String askForAssignee() {
+    /*public String askForAssignee() {
         System.out.println("Enter assignee and press enter");
         return sc.nextLine();
-    }
+    }*/
     public String askForDone() {
         System.out.println("Enter done (yes or no) and press enter");
         return sc.nextLine();
     }
-    public String askForUpdate() {
+    /*public String askForUpdate() {
         System.out.println("Update assignment or done? Enter your choice and press enter");
         return sc.nextLine();
-    }
+    }*/
 
-    public ToDo askForAssignment() {
+    public ToDo askForTodo() {
         System.out.println("Enter assignment and press enter");
         String assignment = sc.nextLine();
         System.out.println("Enter assignee and press enter");
