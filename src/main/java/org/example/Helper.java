@@ -70,6 +70,8 @@ public class Helper {
     }
     public int askForId() {
         System.out.println("Enter id and press enter");
-        return sc.nextInt();
+        int id = sc.nextInt();
+        sc.nextLine();
+        return id;
     }
 }

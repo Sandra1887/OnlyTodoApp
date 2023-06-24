@@ -150,11 +150,8 @@ public class DbHandler implements iCrud, iTable {
                 System.out.println("Done: " + done);
                 System.out.println("-------------------------");
             }
-            System.out.println("Enter Id and press enter");
-            int chosenId = sc.nextInt();
-            sc.nextLine();
-            System.out.println("Enter new assignment and press enter");
-            String newAssignment = sc.nextLine();
+            int chosenId = helper.askForId();
+            String newAssignment = helper.askForOnlyAssignment();
 
             String sqlUpdate = "UPDATE " + tableName + " SET assignment = ? WHERE todo_id = ?";
             PreparedStatement pstmt = connection.prepareStatement(sqlUpdate);
@@ -184,9 +181,7 @@ public class DbHandler implements iCrud, iTable {
                 System.out.println("Done: " + done);
                 System.out.println("-------------------------");
             }
-            System.out.println("Enter Id and press enter");
-            int chosenId = sc.nextInt();
-            sc.nextLine();
+            int chosenId = helper.askForId();
             String newDone = helper.askForDone();
 
             String sqlUpdate = "UPDATE " + tableName + " SET done = ? WHERE todo_id = ?";
