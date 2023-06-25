@@ -30,13 +30,8 @@ att skriva in ID för att sedan ta bort matchande TODO.
 
 ### Planering 
 #### Lösningsförslag:
-- Planering
-  - Lösningsförslag innan uppgiften påbörjades, t.ex:
-    - Skisser
-    - Hur du tänker lösa uppgiften
-    - Pseudokod
-    - Diagram
-  - Jira/trello och projekthantering enligt Scrum/KanBan
+ - Klassdiagram: https://lucid.app/lucidchart/c5d2e1c2-074a-441a-b902-af853513c7e5/edit?view_items=Fmu-GisJSQHb&invitationId=inv_7182489d-9dac-4d32-8231-a060f03ddfb9
+ - Trello:
 
 ### Arbetet och dess genomförande:
 #### Vad som varit svårt:
