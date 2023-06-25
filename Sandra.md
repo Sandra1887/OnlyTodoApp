@@ -57,6 +57,21 @@ rekommendation, att hårdkoda testerna.
   - Beskriv något som var svårt att få till
   - Beskriv om du fått byta lösning och isf varför
 
+### Reflektioner och slutsatser
+##### Vad har gått bra:
+- Jag tycker ändå att jag haft många bra idéer längs vägen(se ovan) som jag gärna hade haft tid att implementera i 
+applikationen. 
+##### Vad gick dåligt:
+- Mockito. För det första att i första versionen hitta alla kryphål och ha 100% mockning av beroenden - där inte ens
+läraren kunde komma med en lösning på problemet. 
+- Att behöva göra om och begränsa sig efter deadline.
+##### Vad jag har lärt mig och vad jag hade gjort annorlunda:
+- Att använda GitHub actions och vad en YML-fil är
+- Att ta ett test och en metod i taget och successivt bygga på testerna.
+##### Möjligheter med kurskunskaperna:
+- Att veta hur man testar med JUnit och Mockito
+- Veta vad det är och hur man skriver/tyder en testrapport
+
 - Reflektioner och slutsatser
     - Vad gick bra
     - Vad gick dåligt
