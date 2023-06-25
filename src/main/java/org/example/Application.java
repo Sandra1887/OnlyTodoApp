@@ -32,7 +32,9 @@ public class Application {
                     dbHandler.delete();
                 }
                 case 5 -> {
+                    System.out.println("Until next time! :)");
                     exit = true;
+                    System.exit(0);
                 }
             }
         }

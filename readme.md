@@ -12,7 +12,7 @@
  - Enter "Database Name"
  - Choose from "Create, Read, Update and Delete" to handle TODOs
  - All of them starts with asking you to "Enter Table Name"
- - Chooce "Exit" when you are done
+ - Choose "Exit" when you are done
 
 ## Start JUnit and Mockito tests:
 
