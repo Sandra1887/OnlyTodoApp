@@ -17,7 +17,7 @@ vidare till att be om "assignment", "assignee" och "done" och en ny TODO skapas.
 istället en ny sådan och man blir sedan ombedd att fylla i all TODO-information.
 - __Read__: Efter att man angett *Table Name* frågar programmet användaren om man vill läsa en TODO - där man isåfall fyller
 i "id" för TODO:n och TODO med matchande ID visas - eller om man vill läsa alla TODOs.Vid sist nämnda får man en lista 
-med alla TODOs i taballen med information om ID, Assignment, Assignee och Done.
+med alla TODOs i tabellen med information om ID, Assignment, Assignee och Done.
 - __Update__: Efter att man angett *Table Name* frågar programmet om man vill uppdatera assignment eller uppdatera done. 
 Båda startar med att visa en lista på de TODOs som finns i tabellen och man får sedan välja ID för TODO:n som man vill 
 uppdatera och därefter fylla i antingen "assignment" eller "done".
