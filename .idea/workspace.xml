@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="yml">
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="Scope: Test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/ToDoTestW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ToDoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/ToDoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +216,13 @@
       <option name="presentableId" value="LOCAL−00021" />
       <updated>1687712034148</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL−00022" summary="Scope: Test">
+      <created>1687712236825</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1687712236825</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -244,6 +251,7 @@
     <MESSAGE value="ReadMe done" />
     <MESSAGE value="Färdigt!! FIH(för i helvete)" />
     <MESSAGE value="yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="yml" />
+    <MESSAGE value="Scope: Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scope: Test" />
   </component>
 </project>
