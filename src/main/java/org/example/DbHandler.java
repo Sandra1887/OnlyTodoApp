@@ -61,8 +61,42 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
-    @Override
-    public boolean read() {
+    public void read() {
+        int answer = helper.askForRead(); //Read all or one?
+        switch(answer) {
+            case 1 -> readOne();
+            case 2 -> readAll();
+            default -> {
+                System.out.println("Wrong input. Try again");
+                read();
+            }
+        }
+    }
+    public boolean readOne() {
+        String tableName = helper.askForTableName();
+        int id = helper.askForId();
+        boolean success = false;
+        String sql = "SELECT * FROM " + tableName + " WHERE todo_id = ?";
+        try {
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            rs = pstmt.executeQuery();
+
+            while(rs.next()) {
+                String assignment = rs.getString("assignment");
+                String assignee = rs.getString("assignee");
+                String done = rs.getString("done");
+                System.out.println("Assignment: " + assignment + ". Assignee: " + assignee + ". Done: " + done);
+            }
+            success = true;
+        } catch (SQLException e) {
+            System.out.println("Error reading statement: " + e.getMessage());
+            success = false;
+        }
+        return success;
+    }
+
+    public boolean readAll() {
         String tableName = helper.askForTableName();
         boolean success = false;
         String sql = "SELECT * FROM " + tableName;

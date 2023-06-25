@@ -59,8 +59,25 @@ class DbHandlerTest {
 
         assertFalse(result);
     }
+
     @Test
-    public void testRead() throws SQLException {
+    public void testReadOne() throws SQLException {
+        when(helperMock.askForTableName()).thenReturn("tableMock");
+        when(helperMock.askForId()).thenReturn(1);
+        when(connectionMock.prepareStatement(anyString())).thenReturn(pstmtMock);
+        when(pstmtMock.executeQuery()).thenReturn(rsMock);
+
+        when(rsMock.next()).thenReturn(true, false);
+        when(rsMock.getString("assignment")).thenReturn("mockAssignment");
+        when(rsMock.getString("assignee")).thenReturn("mockAssignee");
+        when(rsMock.getString("done")).thenReturn("mockDone");
+
+        boolean result = dbHandlerMock.readOne();
+
+        assertFalse(result);
+    }
+    @Test
+    public void testReadAll() throws SQLException {
         when(helperMock.askForTableName()).thenReturn("tableMock");
         when(connectionMock.createStatement()).thenReturn(stmtMock);
         when(stmtMock.executeQuery(anyString())).thenReturn(rsMock);
@@ -69,7 +86,7 @@ class DbHandlerTest {
         when(rsMock.getString("assignee")).thenReturn("assigneeMock");
         when(rsMock.getString("done")).thenReturn("doneMock");
 
-        boolean result = dbHandlerMock.read();
+        boolean result = dbHandlerMock.readAll();
 
         /*Mockito.verify(helperMock).askForTableName();
 

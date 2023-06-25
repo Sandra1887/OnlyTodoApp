@@ -38,6 +38,16 @@ public class Helper {
         System.out.println("Enter done (yes or no) and press enter");
         return sc.nextLine();
     }
+
+    public int askForRead() {
+        System.out.println("""
+                Read:
+                1. One
+                2. All""");
+        int choice = sc.nextInt();
+        sc.nextLine();
+        return choice;
+    }
     public int askForUpdate() {
         System.out.println("""
                 Update:

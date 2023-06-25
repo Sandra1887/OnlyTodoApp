@@ -52,13 +52,11 @@ public class UserHandler implements iCrud, iTable {
     }
 
     @Override
-    public boolean read() {
-        return false;
+    public void read() {
     }
 
     @Override
-    public boolean update() {
-        return false;
+    public void update() {
     }
 
     @Override
@@ -75,4 +73,5 @@ public class UserHandler implements iCrud, iTable {
     public boolean searchForTable(String tableName) {
         return false;
     }
-}*/
+}
+*/

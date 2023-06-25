@@ -28,9 +28,6 @@ public class Application {
                     dbHandler.update();
                     break;
                 }
-                /*case 4 -> {
-                    dbHandler.updateDone();
-                }*/
                 case 4 -> {
                     dbHandler.delete();
                 }
