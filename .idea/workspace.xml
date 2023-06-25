@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="Updated documentation">
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="ToDoTests added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +17,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -127,7 +128,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1687684701078</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="ToDoTests added">
+      <created>1687686365484</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1687686365484</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +157,7 @@
     <MESSAGE value="Updated read() - with readOne() and readAll()&#10;Updated DbHandlerTest - testReadOne()" />
     <MESSAGE value="Application Exit()" />
     <MESSAGE value="Updated documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated documentation" />
+    <MESSAGE value="ToDoTests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="ToDoTests added" />
   </component>
 </project>
