@@ -2,13 +2,13 @@ package org.example;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
-import java.sql.*;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.mockito.Mockito;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
+
+import java.sql.*;
 
 class DbHandlerTest {
     Connection connectionMock;
@@ -18,12 +18,13 @@ class DbHandlerTest {
     DbHandler dbHandlerMock;
     Helper helperMock;
     String dbName = "testDbName";
+
     String tableMock = "testTable";
     String assignmentMock = "assignmentMock";
     String assigneeMock = "assigneeMock";
     String doneMock = "doneMock";
     @BeforeEach
-    public void setUp() throws SQLException {
+    public void setUp() {
         connectionMock = mock(Connection.class);
         pstmtMock = mock(PreparedStatement.class);
 
@@ -89,20 +90,11 @@ class DbHandlerTest {
         when(rsMock.getString("assignment")).thenReturn(assignmentMock);
         when(rsMock.getString("assignee")).thenReturn(assigneeMock);
         when(rsMock.getString("done")).thenReturn(doneMock);
+        boolean expected = true;
+        when(dbHandlerMock.readAll()).thenReturn(expected);
+        boolean actual = dbHandlerMock.readAll();
 
-        boolean result = dbHandlerMock.readAll();
-
-        /*Mockito.verify(helperMock).askForTableName();
-
-        Mockito.verify(connectionMock).createStatement();
-        Mockito.verify(stmtMock).executeQuery("SELECT * FROM tablemock");
-
-        Mockito.verify(rsMock).next();
-        Mockito.verify(rsMock).getString("assignment");
-        Mockito.verify(rsMock).getString("assignee");
-        Mockito.verify(rsMock).getString("done");*/
-
-        assertFalse(result);
+        assertEquals(expected, actual);
     }
 
     @Test

@@ -15,7 +15,7 @@ class HelperTest {
     Scanner mockScanner;
     Helper mockHelper;
     @BeforeEach
-    void setUp() throws SQLException {
+    void setUp() {
         mockScanner = mock(Scanner.class);
         mockHelper = new Helper();
         mockHelper.sc = mockScanner;
