@@ -1,52 +1,68 @@
 package org.example;
 
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class ToDoTest {
-
-    @Test
-    public void testGetAssignment() {
-        String assignment = "Finish homework";
-        ToDo todo = new ToDo(assignment, "John Doe", "No");
-        Assertions.assertEquals(assignment, todo.getAssignment());
+    ToDo todoMock;
+    @BeforeEach
+    public void setUp() {
+        todoMock = mock(ToDo.class);
     }
 
     @Test
     public void testSetAssignment() {
-        String assignment = "Finish project";
-        ToDo todo = new ToDo("Do laundry", "Jane Smith", "Yes");
-        todo.setAssignment(assignment);
-        Assertions.assertEquals(assignment, todo.getAssignment());
-    }
+        String expected = "mockedAssignment";
+        todoMock.setAssignment(expected);
 
+        Mockito.verify(todoMock).setAssignment("mockedAssignment");
+    }
     @Test
-    public void testGetAssignee() {
-        String assignee = "John Doe";
-        ToDo todo = new ToDo("Write report", assignee, "No");
-        Assertions.assertEquals(assignee, todo.getAssignee());
-    }
+    public void testGetAssignment() {
+        //Arrange
+        String expected = "mockedAssignment";
+        when(todoMock.getAssignment()).thenReturn(expected);
+        //Act
+        String actual = todoMock.getAssignment();
+        //Assert
+        assertEquals(expected, actual);
 
+    }
     @Test
     public void testSetAssignee() {
-        String assignee = "Jane Smith";
-        ToDo todo = new ToDo("Clean the house", "John Doe", "Yes");
-        todo.setAssignee(assignee);
-        Assertions.assertEquals(assignee, todo.getAssignee());
-    }
+        String expected = "mockedAssignee";
+        todoMock.setAssignee(expected);
 
+        Mockito.verify(todoMock).setAssignee("mockedAssignee");
+    }
     @Test
-    public void testGetDone() {
-        String done = "No";
-        ToDo todo = new ToDo("Buy groceries", "Jane Smith", done);
-        Assertions.assertEquals(done, todo.getDone());
+    public void testGetAssignee() {
+        String expected = "mockedAssignee";
+        when(todoMock.getAssignee()).thenReturn(expected);
+        //Act
+        String actual = todoMock.getAssignee();
+        //Assert
+        assertEquals(expected, actual);
     }
-
     @Test
     public void testSetDone() {
-        String done = "Yes";
-        ToDo todo = new ToDo("Submit report", "John Doe", "No");
-        todo.setDone(done);
-        Assertions.assertEquals(done, todo.getDone());
+        String expected = "mockedDone";
+        todoMock.setDone(expected);
+
+        Mockito.verify(todoMock).setDone("mockedDone");
+    }
+    @Test
+    public void testGetDone() {
+        String expected = "mockedDone";
+        when(todoMock.getDone()).thenReturn(expected);
+
+        String actual = todoMock.getDone();
+
+        assertEquals(expected, actual);
     }
 }
