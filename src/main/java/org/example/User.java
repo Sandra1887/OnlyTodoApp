@@ -3,14 +3,24 @@ package org.example;
 import java.util.List;
 
 public class User {
+    private int id;
     private String name;
     private int age;
     private List<ToDo> todos;
 
-    public User(String name, int age, List<ToDo> todos) {
+    public User(int id, String name, int age, List<ToDo> todos) {
+        setId(id);
         setName(name);
         setAge(age);
         setTodos(todos);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

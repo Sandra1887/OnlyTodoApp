@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="Documentations">
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="ReadMe done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HelperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandra.md" beforeDir="false" afterPath="$PROJECT_DIR$/Sandra.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +153,13 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1687695211386</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="ReadMe done">
+      <created>1687697653126</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1687697653126</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +185,7 @@
     <MESSAGE value="ToDoTests added" />
     <MESSAGE value="Github Workflow" />
     <MESSAGE value="Documentations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Documentations" />
+    <MESSAGE value="ReadMe done" />
+    <option name="LAST_COMMIT_MESSAGE" value="ReadMe done" />
   </component>
 </project>

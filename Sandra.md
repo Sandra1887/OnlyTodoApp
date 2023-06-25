@@ -6,12 +6,14 @@ Sandra Jeppsson Kristiansson - *2023-06-25*
 - Skapa en fungerande TODO applikation med CRUD-funktioner *(Create, Read, Update, Delete)*.
 - Testa applikationen med JUnit och Mockito
 - Vem som helst skall kunna använda och testa applikationen
+- Använd GitHub Actions och CI
 
 ### Vad jag har gjort:
 - Jag har enligt instruktionerna ovan skapat ett program där användaren startar programmet och blir ombedd att fylla i 
 databasens namn. Därefter får användaren en meny med fem olika val där fyra står för varsin bokstav i "CRUD". Vilken man
 än väljer så börjar dessa med att be användaren om "Table Name". Detta för att ha möjligheten att skapa olika tabeller
-med olika sorters TODO - till exempel *Midsommar, Packa, Städa* etc. 
+med olika sorters TODO - till exempel *Midsommar, Packa, Städa* etc.
+#### DbHandler: 
 - __Create__: När man anger *Table Name* så kollar denna metoden först om tabellen redan finns - gör den det så går den 
 vidare till att be om "assignment", "assignee" och "done" och en ny TODO skapas. Finns inte tabellen så skapar den 
 istället en ny sådan och man blir sedan ombedd att fylla i all TODO-information.
@@ -22,16 +24,28 @@ med alla TODOs i tabellen med information om ID, Assignment, Assignee och Done.
 Båda startar med att visa en lista på de TODOs som finns i tabellen och man får sedan välja ID för TODO:n som man vill 
 uppdatera och därefter fylla i antingen "assignment" eller "done".
 - __Delete__: Efter att man angett *Table Name* visar metoden alla TODOs som finns i tabellen. Därefter blir man ombedd 
-att skriva in ID för att sedan ta bort matchande TODO.
-- __Exit__: När man är känner sig färdig med programmet väljer man denna.
-
-- __iCrud__: Ett gränssnitt(*interface*) med CRUD-funktionalitet. Där Create() och Delete() har boolean som returntyper
+att skriva in ID för att sedan ta bort matchande TODO. 
+#### ..implementerar *iCrud*:
+- Ett gränssnitt(*interface*) med CRUD-funktionalitet. Där Create() och Delete() har boolean som returntyper
   (som i detta fall är anpassade efter testerna) och Read() och Update() är satta till void.
+#### User:
+- Userklass med attributen int id, String name, int age och List<ToDo> todos men som aldrig fick se ljuset.
+#### UserHandler:
+- UserFacade som implementerar iCrud och iTable men som aldrig fick se ljuset.
+#### iTable:
+- Ett gränssnitt(*interface*) med metoderna createTable() och searchForTable() men som aldrig heller fick se ljuset.
+### Tester:
+- __ToDoTest__: Testar metoderna i ToDo.
+- __DbHandlerTest__: Testar 80%+ av metoderna i DbHandler
+- __HelperTest__: Testar 80%+ av metoderna i Helper
+
 
 ### Planering 
-#### Lösningsförslag:
- - Klassdiagram: https://lucid.app/lucidchart/c5d2e1c2-074a-441a-b902-af853513c7e5/edit?view_items=Fmu-GisJSQHb&invitationId=inv_7182489d-9dac-4d32-8231-a060f03ddfb9
- - Trello:
+#### Lösningsförslag: 
+#### UML: 
+- https://lucid.app/lucidchart/c5d2e1c2-074a-441a-b902-af853513c7e5/edit?view_items=Fmu-GisJSQHb&invitationId=inv_7182489d-9dac-4d32-8231-a060f03ddfb9
+##### KanBan:
+ - Trello: https://trello.com/invite/b/yxF1AFWT/ATTI1f77fc66dac720ab0653d26db76638b2F992D4CD/todoapplicationwithtesting
 
 ### Arbetet och dess genomförande:
 #### Vad som varit svårt:
@@ -46,11 +60,6 @@ i både DBHandler och UserHandler kunnat "extenda" denna och dess anslutning til
 - I min första kodversion så mockade(@Mock) jag alla återanvändbara variabler i testerna, t.ex. "tableName", 
 "mockAssignment", "mockAssignee" etc. men Mockito gillade inte detta och jag valde därför, efter chatGPTs 
 rekommendation, att hårdkoda testerna.
-
-  - Vad som varit svårt
-  - Beskriv lite olika lösningar du gjort
-  - Beskriv något som var svårt att få till
-  - Beskriv om du fått byta lösning och isf varför
 
 ### Reflektioner och slutsatser
 ##### Vad har gått bra:
@@ -67,10 +76,4 @@ läraren kunde komma med en lösning på problemet.
 - Att veta hur man testar med JUnit och Mockito
 - Veta vad det är och hur man skriver/tyder en testrapport
 
-- Reflektioner och slutsatser
-    - Vad gick bra
-    - Vad gick dåligt
-    - Vad har du lärt dig
-    - Vad har du gjort annorlunda om du gjort om projektet
-    - Vilka möjligheter ser du av kunskapen du fått under kursen
     - 
