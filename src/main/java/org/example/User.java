@@ -6,9 +6,9 @@ public class User {
     private int id;
     private String name;
     private int age;
-    private List<ToDo> todos;
+    private List<Todo> todos;
 
-    public User(int id, String name, int age, List<ToDo> todos) {
+    public User(int id, String name, int age, List<Todo> todos) {
         setId(id);
         setName(name);
         setAge(age);
@@ -39,11 +39,11 @@ public class User {
         this.age = age;
     }
 
-    public List<ToDo> getTodos() {
+    public List<Todo> getTodos() {
         return todos;
     }
 
-    public void setTodos(List<ToDo> todos) {
+    public void setTodos(List<Todo> todos) {
         this.todos = todos;
     }
 }

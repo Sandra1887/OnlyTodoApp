@@ -55,7 +55,7 @@ class HelperTest {
                 .thenReturn("mockAssignee")
                 .thenReturn("mockDone");
 
-        ToDo result = mockHelper.askForTodo();
+        Todo result = mockHelper.askForTodo();
 
         assertEquals("mockAssignment", result.getAssignment());
         assertEquals("mockAssignee", result.getAssignee());

@@ -1,11 +1,11 @@
 package org.example;
 
-public class ToDo {
+public class Todo {
     private String assignment;
     private String assignee;
     private String done;
 
-    public ToDo(String assignment, String assignee, String done) {
+    public Todo(String assignment, String assignee, String done) {
         setAssignment(assignment);
         setAssignee(assignee);
         setDone(done);

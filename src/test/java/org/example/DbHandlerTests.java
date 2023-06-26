@@ -38,11 +38,10 @@ class DbHandlerTest {
     }
     @Test
     public void testConnection() throws SQLException {
-        //create a mock connection object
         //specify the behavior of the mock connection
         when(connectionMock.isValid(0)).thenReturn(true);
         //Create an instance of the DbHandler
-        dbHandlerMock = new DbHandler(dbName); //<-- onödig?
+        dbHandlerMock = new DbHandler(dbName);
         //set the mock connection
         dbHandlerMock.setConnection(connectionMock);
         //Retrieve the information and perform tests
@@ -52,9 +51,11 @@ class DbHandlerTest {
     }
     @Test
     public void testCreate() throws SQLException {
+        //specify the behavior of the mock connection
         when(helperMock.askForTableName()).thenReturn(tableMock);
         when(dbHandlerMock.searchForTable(tableMock)).thenReturn(false).thenReturn(true);
-        ToDo mockToDo = new ToDo(assignmentMock, assigneeMock, doneMock);
+        //create an instance of a new Todo
+        Todo mockToDo = new Todo(assignmentMock, assigneeMock, doneMock);
         when(helperMock.askForTodo()).thenReturn(mockToDo);
 
         when(connectionMock.prepareStatement(Mockito.anyString())).thenReturn(pstmtMock);

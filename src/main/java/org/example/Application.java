@@ -3,7 +3,7 @@ package org.example;
 import java.sql.SQLException;
 
 public class Application {
-    ToDo todo;
+    Todo todo;
     DbHandler dbHandler;
     Helper helper;
     boolean exit = false;

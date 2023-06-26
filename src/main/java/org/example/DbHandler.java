@@ -38,7 +38,7 @@ public class DbHandler implements iCrud, iTable {
         boolean success = false;
 
         if (searchForTable(tableName) == true) {
-            ToDo todo = helper.askForTodo();
+            Todo todo = helper.askForTodo();
             String sql = "INSERT INTO " + tableName + " (assignment, assignee, done) VALUES (?,?,?)"; // plus för att du har paramtrar!
 
             try (PreparedStatement pstmt = connection.prepareStatement(sql)) {

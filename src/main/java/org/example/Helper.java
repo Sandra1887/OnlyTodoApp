@@ -58,14 +58,14 @@ public class Helper {
         return choice;
     }
 
-    public ToDo askForTodo() {
+    public Todo askForTodo() {
         System.out.println("Enter assignment and press enter");
         String assignment = sc.nextLine();
         System.out.println("Enter assignee and press enter");
         String assignee = sc.nextLine();
         System.out.println("Enter done (yes or no) and press enter");
         String done = sc.nextLine();
-        return new ToDo(assignment, assignee, done);
+        return new Todo(assignment, assignee, done);
     }
     public int askForId() {
         System.out.println("Enter id and press enter");
