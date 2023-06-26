@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="TodoTest">
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="changed todoTests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ToDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/iCrud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/iCrud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/DbHandlerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HelperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/ToDoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TodoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandra.db" beforeDir="false" afterPath="$PROJECT_DIR$/Sandra.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.16601562",
     "project.structure.side.proportion": "0.2"
   }
@@ -242,7 +235,13 @@
       <option name="presentableId" value="LOCAL−00024" />
       <updated>1687714091252</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL−00025" summary="changed todoTests">
+      <created>1687771511288</created>
+      <option name="number" value="LOCAL−00025" />
+      <option name="presentableId" value="LOCAL−00025" />
+      <updated>1687771511288</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +272,8 @@
     <MESSAGE value="yml" />
     <MESSAGE value="Scope: Test" />
     <MESSAGE value="TodoTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="TodoTest" />
+    <MESSAGE value="changed todoTests" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed todoTests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
