@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="added plugin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandra.md" beforeDir="false" afterPath="$PROJECT_DIR$/SandraDocument.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testDbName.db" beforeDir="false" />
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="Comments DbHandler">
+      <change beforePath="$PROJECT_DIR$/SandraDocument.md" beforeDir="false" afterPath="$PROJECT_DIR$/SandraDocument.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +245,13 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1687772290155</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL−00027" summary="Comments DbHandler">
+      <created>1687850845864</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1687850845864</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -283,7 +284,8 @@
     <MESSAGE value="TodoTest" />
     <MESSAGE value="changed todoTests" />
     <MESSAGE value="added plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="added plugin" />
+    <MESSAGE value="Comments DbHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments DbHandler" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
