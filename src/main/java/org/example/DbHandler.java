@@ -1,7 +1,6 @@
 package org.example;
 
 import java.sql.*;
-import java.util.List;
 import java.util.Scanner;
 
 public class DbHandler implements iCrud, iTable {
@@ -17,6 +16,12 @@ public class DbHandler implements iCrud, iTable {
         sc = new Scanner(System.in);
     }
 
+    /***
+     * Connects to SQLite and creats a new database which name is given through given the parameter.
+     * @param dbName
+     * @return Connection
+     * @throws SQLException
+     */
     public Connection getConnection(String dbName) throws SQLException {
         if (connection == null || connection.isClosed()) {
             try {
@@ -32,6 +37,11 @@ public class DbHandler implements iCrud, iTable {
         this.connection = connection;
     }
 
+    /***
+     * Method that asks the user for table name. If the table name exists it continues to ask for the Todo that
+     * should be created and then adds it to the table. If the table does not exist it creates a new table.
+     * @return boolean - in this case. For an easier unit testing.
+     */
     @Override
     public boolean create() {
         String tableName = helper.askForTableName();
@@ -61,6 +71,10 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
+    /***
+     * Method that asks the user if they want to read one todo or all todos.
+     */
+    @Override
     public void read() {
         int answer = helper.askForRead(); //Read all or one?
         switch(answer) {
@@ -72,6 +86,11 @@ public class DbHandler implements iCrud, iTable {
             }
         }
     }
+
+    /***
+     * Method that asks for the table name and then the Todo ID. Then shows the matching Todo.
+     * @return boolean - in this case. For an easier unit testing.
+     */
     public boolean readOne() {
         String tableName = helper.askForTableName();
         int id = helper.askForId();
@@ -96,6 +115,10 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
+    /***
+     * Method that shows all the existing Todos in the selected table.
+     * @return boolean - in this case. For an easier unit testing.
+     */
     public boolean readAll() {
         String tableName = helper.askForTableName();
         boolean success = false;
@@ -117,6 +140,11 @@ public class DbHandler implements iCrud, iTable {
         }
         return success;
     }
+
+    /***
+     * Methods that asks if the user would like to update an "assignment" or a "done".
+     */
+    @Override
     public void update() {
         int answer = helper.askForUpdate();
         switch(answer) {
@@ -129,6 +157,11 @@ public class DbHandler implements iCrud, iTable {
         }
     }
 
+    /***
+     * Method that asks the user for table name and then shows all the existing Todos in it. The user is then asked to
+     * enter Todo ID and the new assignment.
+     * @return boolean - in this case. For an easier unit testing.
+     */
     public boolean updateText() {
         String tableName = helper.askForTableName();
         boolean success = false;
@@ -165,6 +198,11 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
+    /***
+     * Method that asks the user for table name and then shows all the existing Todos in it. The user is then asked to
+     * enter Todo ID and the new done.
+     * @return
+     */
     public boolean updateDone() {
         String tableName = helper.askForTableName();
         boolean success = false;
@@ -201,6 +239,11 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
+    /***
+     * Method that asks for table name and shows all the existing Todos in it. The user is then asked to select and
+     * enter the ID of the Todo that should be deleted.
+     * @return boolean - in this case. For an easier unit testing.
+     */
     @Override
     public boolean delete() {
         String tableName = helper.askForTableName();
@@ -237,6 +280,11 @@ public class DbHandler implements iCrud, iTable {
         return success;
     }
 
+    /***
+     * Method that creates a table if the entered table in "create()" does not exist.
+     * @param tableName
+     */
+    @Override
     public void createTable(String tableName) {
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " (" +
                 "todo_id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -251,6 +299,14 @@ public class DbHandler implements iCrud, iTable {
             System.out.println("Error creating table: " + e.getMessage());
         }
     }
+
+    /***
+     * Method that searches for a table in the database. If the table exists it returns true. If it does not exist
+     * it returns false.
+     * @param tableName
+     * @return
+     */
+    @Override
     public boolean searchForTable(String tableName) {
         try {
             stmt = connection.createStatement();
@@ -258,9 +314,9 @@ public class DbHandler implements iCrud, iTable {
             rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                return true; //table exists
+                return true;
             } else {
-                return false; //Table does not exist
+                return false;
             }
         } catch (SQLException e) {
             System.out.println("Error message: " + e.getMessage());

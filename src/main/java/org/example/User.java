@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.List;
 
+//Ej kopplad till app eller testad
+
 public class User {
     private int id;
     private String name;

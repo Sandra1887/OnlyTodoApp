@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="changed todoTests">
+    <list default="true" id="2bb43dcc-ff2b-438a-b3fd-aa94ee00e1e9" name="Changes" comment="added plugin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sandra.db" beforeDir="false" afterPath="$PROJECT_DIR$/Sandra.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sandra.md" beforeDir="false" afterPath="$PROJECT_DIR$/SandraDocument.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DbHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testDbName.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +244,13 @@
       <option name="presentableId" value="LOCAL−00025" />
       <updated>1687771511288</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL−00026" summary="added plugin">
+      <created>1687772290155</created>
+      <option name="number" value="LOCAL−00026" />
+      <option name="presentableId" value="LOCAL−00026" />
+      <updated>1687772290155</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +282,8 @@
     <MESSAGE value="Scope: Test" />
     <MESSAGE value="TodoTest" />
     <MESSAGE value="changed todoTests" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed todoTests" />
+    <MESSAGE value="added plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="added plugin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
